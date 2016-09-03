@@ -3,6 +3,8 @@
 QRCode login by mobile scan flow, it is re-procude lik wechat login flow.
 Login page will auto generate QRCode for mobile QRCode scan, after mobile link to QRCode authed login page. Desktop browser will receive message and auto reload.
 
+ * [live demo](https://qrlogin-reproduce.herokuapp.com/)
+
 ## install
 
 ```
