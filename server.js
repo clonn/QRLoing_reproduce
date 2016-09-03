@@ -13,7 +13,8 @@ var device  = require('express-device');
 
 var runningPortNumber = process.env.PORT || 1337;
 var domain = process.env.DOMAIN || 'http://localhost';
-domain = domain + ':' + runningPortNumber;
+if (domain.indexOf('herokuapp') < 0)
+	domain = domain + ':' + runningPortNumber;
 var sso_id = {};
 
 
@@ -44,7 +45,6 @@ app.get("/", function(req, res){
 app.get("/qrlogin", function(req, res){
 	res.render('qrlogin', {});
 });
-
 app.get("/qr_sso_code", function(req, res) {
 	var _code = new Date().valueOf();
 	sso_id[_code] = true;
